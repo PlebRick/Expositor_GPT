@@ -1,0 +1,40 @@
+openapi: 3.1.0
+info:
+  title: Theology Topic Linker
+  description: Returns Logos deep links to theological books that discuss a given topic.
+  version: 1.0.0
+servers:
+  - url: https://api.ping.gg
+    description: Dummy server to pass OpenAI validation
+paths:
+  /link:
+    get:
+      operationId: getTopicLink
+      summary: Returns a reference to a theology resource based on topic + author.
+      description: Returns a placeholder response referencing a theological resource.
+      parameters:
+        - name: author
+          in: query
+          required: true
+          description: Theologian name (e.g. 'Grudem')
+          schema:
+            type: string
+        - name: topic
+          in: query
+          required: true
+          description: The doctrinal topic (e.g. 'justification')
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Returns a reference in plain text
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: Resource not found
+          content:
+            text/plain:
+              schema:
+                type: string
