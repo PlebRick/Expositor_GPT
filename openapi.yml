@@ -4,10 +4,10 @@ info:
   description: Returns Logos deep links to theological books that discuss a given topic.
   version: 1.0.0
 servers:
-  - url: https://expositor-gpt.vercel.app
-    description: Vercel deployment endpoint
+  - url: https://expositor-gpt.vercel.app/api
+    description: Vercel deployment endpoint for the API
 paths:
-  /api/link:
+  /link:
     get:
       operationId: getTopicLink
       summary: Returns a reference to a theology resource based on topic + author.
