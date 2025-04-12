@@ -4,10 +4,10 @@ info:
   description: Returns Logos deep links to theological books that discuss a given topic.
   version: 1.0.0
 servers:
-  - url: https://api.ping.gg
-    description: Dummy server to pass OpenAI validation
+  - url: https://expositor-gpt.vercel.app
+    description: Vercel deployment endpoint
 paths:
-  /link:
+  /api/link:
     get:
       operationId: getTopicLink
       summary: Returns a reference to a theology resource based on topic + author.
